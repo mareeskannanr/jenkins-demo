@@ -6,9 +6,10 @@ def TEST_METHOD() {
 
 pipeline {
 
-    agent {
-        label "RMK";
-    };
+     node {
+        label 'master'
+        customWorkspace "${env.JobPath}"
+     }
 
     environment {
         COMMON_ENV = "common env"
@@ -31,7 +32,5 @@ pipeline {
                 echo '${LOCAL_ENV}'
             }
         }
-
     }
-
 }
