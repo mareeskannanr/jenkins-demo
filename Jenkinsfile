@@ -44,6 +44,19 @@ pipeline {
         stage('Stage 4') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Stage 5') {
+            steps {
+                sh 'mkdir -p plan-generator'
+                withEnv(['gitUrl=https://github.com/mareeskannanr/plan-generator.git'])
+                dir('plan-generator') {
+                    checkout resolveScm(source: git('${gitUrl}'), targets: [BRANCH_NAME, 'master'])
+                }
+
+                sh 'cd plan-generator/'
+                sh 'mvn clean install'
                 println '***********************'
             }
         }
