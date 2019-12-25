@@ -6,7 +6,7 @@ def TEST_METHOD() {
 
 pipeline {
 
-     agent any
+    agent any
 
     environment {
         COMMON_ENV = "common env"
@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                echo '${COMMON_ENV}'
+                echo '${COMMON_ENV}' + COMMON_ENV
                 sh('pwd')
             }
         }
@@ -25,8 +25,8 @@ pipeline {
                 LOCAL_ENV = 'local env'
             }
             steps {
-                echo '${COMMON_ENV}'
-                echo '${LOCAL_ENV}'
+                echo '${COMMON_ENV}' + COMMON_ENV
+                echo '${LOCAL_ENV}' + LOCAL_ENV
             }
         }
     }
