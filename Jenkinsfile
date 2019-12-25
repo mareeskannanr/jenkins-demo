@@ -20,7 +20,7 @@ pipeline {
             }
         }
 
-        stage('Stage 1') {
+        stage('Stage 2') {
             environment {
                 LOCAL_ENV = 'local env'
             }
