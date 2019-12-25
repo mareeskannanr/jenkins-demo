@@ -36,8 +36,15 @@ pipeline {
                     println "${aaa}"
                     println "${bbb}"
                     println "${ccc}"
-                    println "${eee}"
+                    println '${eee}'
                 }
+            }
+        }
+
+        stage('Stage 4') {
+            steps {
+                checkout scm
+                println '***********************'
             }
         }
     }
