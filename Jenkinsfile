@@ -31,11 +31,13 @@ pipeline {
         }
 
         stage('Stage 3') {
-            withEnv(['aaa=bbb', 'bbb=ccc', 'ccc=ddd', 'eee=${COMMON_ENV}']) {
-                echo '${aaa}'
-                echo '${bbb}'
-                echo '${ccc}'
-                echo '${eee}'
+            steps {
+                withEnv(['aaa=bbb', 'bbb=ccc', 'ccc=ddd', 'eee=${COMMON_ENV}']) {
+                    echo '${aaa}'
+                    echo '${bbb}'
+                    echo '${ccc}'
+                    echo '${eee}'
+                }
             }
         }
     }
