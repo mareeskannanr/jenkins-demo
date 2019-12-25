@@ -4,7 +4,7 @@ def TEST_METHOD() {
     return "test return"
 }
 
-pipeline {
+node {
 
      node {
         label 'master'
