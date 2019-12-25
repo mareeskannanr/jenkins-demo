@@ -33,10 +33,10 @@ pipeline {
         stage('Stage 3') {
             steps {
                 withEnv(["aaa=bbb", "bbb=ccc", "ccc=ddd", "eee=${COMMON_ENV}"]) {
-                    echo "${aaa}"
-                    echo "${bbb}"
-                    echo "${ccc}"
-                    echo "${ddd}"
+                    println "${aaa}"
+                    println "${bbb}"
+                    println "${ccc}"
+                    println "${ddd}"
                 }
             }
         }
