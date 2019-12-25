@@ -6,10 +6,7 @@ def TEST_METHOD() {
 
 pipeline {
 
-     node {
-        label 'master'
-        customWorkspace "${env.JobPath}"
-     }
+     agent any
 
     environment {
         COMMON_ENV = "common env"
